@@ -1,14 +1,9 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link
 } from "react-router-dom";
-import { connect } from 'react-redux';
-
-//import Components
-import Sidebar from './Components/Sidebar/index'
 
 //import Views
 import Home from './Views/Home/index'
@@ -16,7 +11,7 @@ import Users from './Views/Users/index'
 
 //libraries frameworks
 import "antd/dist/antd.css";
-import { Layout } from 'antd';
+import { Layout, Menu } from 'antd';
 const { Header, Content, Footer } = Layout;
 
 
@@ -26,14 +21,20 @@ const App = (props) => {
     <Router>
       <Layout style={{ minHeight: '100vh' }}>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Sidebar />
-          <Content style={{ margin: '0 16px' }}>
+          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+            <div className="logo" />
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+              <Menu.Item key="1">Home</Menu.Item>
+              <Menu.Item key="2">Usuarios</Menu.Item>
+            </Menu>
+          </Header>
+          <Content style={{ margin: '50px 16px' }}>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Route exact path="/" component={ Home } />
               <Route path="/users" component={ Users } />
             </div>
           </Content>
+          <Footer style={{ textAlign: 'center' }}> Created by Carina González</Footer>
         </Layout>
       </Layout>
     </Router>
