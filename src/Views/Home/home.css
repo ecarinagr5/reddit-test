@@ -1,0 +1,7 @@
+.wrap--post{
+    overflow: hidden;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, 22rem);
+    width: 100%;
+}

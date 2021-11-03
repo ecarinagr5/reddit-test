@@ -1,45 +1,46 @@
 import React, { useEffect } from  'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  actionCreators as usersActions,
-  selector as usersSelector,
+  actionCreators as postActions,
+  selector as postSelector,
 } from '../../Redux/features/posts'
 
-import { Table } from 'antd';
+import Card from '../../Components/Card/index';
+import './home.css';
+import postImg from '../../Assets/images/post-img.jpeg';
+import iconperson from '../../Assets/images/icon-person.svg';
 
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { users } = useSelector((state) => usersSelector(state))
+  const { posts } = useSelector((state) => postSelector(state))
 
   useEffect(()=>{
-    dispatch(usersActions.list());
+    dispatch(postActions.allpost());
   }, [dispatch]);
 
-      const dataSource = users.dataList
-      const columns = [
-        {
-          title: 'Name',
-          dataIndex: 'name',
-        },
-        {
-          title: 'User Name',
-          dataIndex: 'username',
-        },
-        {
-          title: 'Email',
-          dataIndex: 'email',
-        }
-      ];
-      
-    return (
-      <Table 
-        dataSource={dataSource} 
-        columns={columns} 
-        loading={users.isLoading}
-        rowKey={users.id}
-      />
+    const data = posts.dataPost
+
+
+    let gridCard = data.map((post,index) => {
+      return (
+           <>
+            <Card 
+              key={ index }
+              data={ post }
+              img={ postImg }
+              photo={ iconperson  }
+            />
+           </>
+      )
+    })
+
+    return(
+      <div className="wrap--post">
+      { gridCard }
+      </div>
     )
+
 }
 
 export default Home;

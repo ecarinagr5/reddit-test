@@ -1,12 +1,12 @@
 import {createStructuredSelector} from 'reselect';
 
 //The main base of this structure is ducks-modular-redux
-export const NAME = 'users';
+export const NAME = 'posts';
 
 // Action Types
-const POST_TRY = '[users]/POST_TRY';
-const POST_SUCCESS = '[users]/POST_SUCCESS';
-const POST_FAILED = '[users]/POST_FAILED';
+const POST_TRY = '[posts]/POST_TRY';
+const POST_SUCCESS = '[posts]/POST_SUCCESS';
+const POST_FAILED = '[posts]/POST_FAILED';
 
 // Initial State:
 const initialState = {
@@ -22,7 +22,7 @@ export default function reducer(state = initialState, action = {}) {
         case actionTypes.POST_FAILED:
             return { ...state, isLoading: false }
         case actionTypes.POST_SUCCESS:
-            return { ...state, isLoading: false, dataList: action.data }
+            return { ...state, isLoading: false, dataPost: action.data }
         default:
             return state
     }

@@ -8,6 +8,7 @@ export default function* tryPostList() {
         const URL = 'https://jsonplaceholder.typicode.com/posts'
         const response = yield call(fetch, URL)
         const data = yield call([response, 'json'])
+        console.log('data',data)
         //if all Ok then dispatch action
         yield put({type: postActions.POST_SUCCESS,data})
     } catch {

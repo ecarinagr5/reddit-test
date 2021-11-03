@@ -1,0 +1,62 @@
+.item--card{
+    border: 1px solid #d9d5d5;
+    padding: 10px;
+    border-radius: 10px;
+}
+.wrap--img picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+.wrap--title{
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80px;
+}
+
+.wrap--title div:nth-child(1){
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d9d5d5;
+    text-align: center;
+    justify-content: center;
+}
+.wrap--title div:nth-child(1) img{
+    width: 35px;
+    height: 35px;
+}
+.wrap--title div:nth-child(2){ 
+    padding-left: 10px;
+    overflow: hidden;
+    width: 80%;
+}
+.wrap--title div:nth-child(2) h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    padding-top: 5px;
+
+}
+.wrap--title div:nth-child(2) p {
+    font-size: 0.8rem;
+    color:#d9d5d5;
+ }
+ .btn--post{
+     overflow: hidden;
+     display: flex;
+     text-align: center;
+     justify-content: center;
+ }
+ .btn--post p {
+     border: 1px solid #d9d5d5;
+     border-radius: 5px;
+     padding: 10px 80px;
+     background-color: #e7e8e9;
+     cursor:pointer;
+ }
+ .btn--post p:hover {
+    background-color: #2592ff; 
+    color: #fff;
+ }
