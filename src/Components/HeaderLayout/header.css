@@ -1,0 +1,11 @@
+.enable{
+    background-color: #147bd1 !important;
+}
+.disable {
+    background-color: transparent !important;
+}
+.logo-icon{
+    width: 40px;
+    margin: 10px 20px;
+    float: left;
+}

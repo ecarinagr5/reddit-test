@@ -38,6 +38,7 @@ const Users = () => {
         columns={columns} 
         loading={users.isLoading}
         rowKey={users.id}
+        key={users.id}
       />
     )
 }
