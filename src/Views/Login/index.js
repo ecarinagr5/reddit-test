@@ -20,7 +20,7 @@ const Login = () => {
 
     const submitValue = () => {
 
-      console.log(typeof(userid));
+
       let keys = Object.keys(dataSource).filter(k=>dataSource[k].id === userid);
       console.log('idData',keys);
     }
