@@ -1,0 +1,3 @@
+[submodule "path_to_submodule"] 
+  path = reddit-test 
+  url = https://github.com/ecarinagr5/reddit-test.git
