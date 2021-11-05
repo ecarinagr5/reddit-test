@@ -16,7 +16,7 @@ import "antd/dist/antd.css";
 import { Layout } from 'antd';
 const { Content, Footer } = Layout;
 
-const App = (props) => {  
+const App = () => {  
 
 
   return (
@@ -26,7 +26,7 @@ const App = (props) => {
           <HeaderLayout />
           <Content style={{ margin: '50px 16px' }}>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              <Route exact path="/login" component={ Login } />
+              <Route exact path="/" component={ Login } />
               <Route path="/home" component={ Home } />
               <Route path="/users" component={ Users } />
               <Route path="/post/:id" component={ Post } />

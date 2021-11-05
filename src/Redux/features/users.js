@@ -7,10 +7,12 @@ export const NAME = 'users';
 const LIST_TRY = '[users]/LIST_TRY';
 const LIST_SUCCESS = '[users]/LIST_SUCCESS';
 const LIST_FAILED = '[users]/LIST_FAILED';
+const LIST_SAVE = '[users]/LIST_SAVE';
 
 // Initial State:
 const initialState = {
     dataList: [],
+    idEnabled:null,
     isLoading: false,
 }
 
@@ -23,16 +25,22 @@ export default function reducer(state = initialState, action = {}) {
             return { ...state, isLoading: false }
         case actionTypes.LIST_SUCCESS:
             return { ...state, isLoading: false, dataList: action.data }
+        case actionTypes.LIST_SAVE:
+            return { ...state, isLoading: false, idEnabled: action.data }
         default:
             return state
     }
 }
 
+const users = (state) => state[NAME];
+
 function list() {
-    return {type: LIST_TRY}
+    return { type: LIST_TRY }
 }
 
-const users = (state) => state[NAME];
+function save() {
+    return { type: LIST_SAVE }
+}
 
 export const selector = createStructuredSelector({
     users,
@@ -40,10 +48,12 @@ export const selector = createStructuredSelector({
 
 export const actionCreators = {
     list,
+    save
 }
 
 export const actionTypes = {
     LIST_TRY,
     LIST_FAILED,
     LIST_SUCCESS,
+    LIST_SAVE
 }

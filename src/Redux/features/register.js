@@ -4,9 +4,9 @@ import {createStructuredSelector} from 'reselect';
 export const NAME = 'register';
 
 // Action Types
-const REGISTER_TRY = '[register]/LIST_TRY';
-const REGISTER_SUCCESS = '[register]/LIST_SUCCESS';
-const REGISTER_FAILED = '[register]/LIST_FAILED';
+const REGISTER_TRY = '[register]/REGISTER_TRY';
+const REGISTER_SUCCESS = '[register]/REGISTER_SUCCESS';
+const REGISTER_FAILED = '[register]/REGISTER_FAILED';
 
 // Initial State:
 const initialState = {
@@ -28,7 +28,7 @@ export default function reducer(state = initialState, action = {}) {
 }
 
 function list() {
-    return {type: LIST_TRY}
+    return {type: REGISTER_TRY}
 }
 
 const users = (state) => state[NAME];
