@@ -38,8 +38,9 @@ function list() {
     return { type: LIST_TRY }
 }
 
-function save() {
-    return { type: LIST_SAVE }
+const save = (user)  => {
+    console.log('in reducer',user)
+    /*return { type: LIST_SAVE }*/
 }
 
 export const selector = createStructuredSelector({

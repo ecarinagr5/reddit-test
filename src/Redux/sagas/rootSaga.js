@@ -1,20 +1,20 @@
-import { takeEvery } from "redux-saga/effects";
+import { takeLatest } from "redux-saga/effects";
 
-import tryUsersList from './users/list';
-import saveUser from './login/savelist';
+import tryUsersList from './userlist';
+import saveUser from './savelist';
 import { actionTypes as userActions } from '../features/users';
-import tryPostList  from './posts/allpost';
+import tryPostList  from './allpost';
 import { actionTypes as postActions } from '../features/posts';
-import trySaveComment   from './comments/listcomment';
+import trySaveComment   from './list';
 import { actionTypes as commentActions } from '../features/comments';
 
 
 export default function* rootSaga(){
     //Watcher
-    yield takeEvery(userActions.LIST_TRY, tryUsersList);
-    yield takeEvery(postActions.POST_TRY, tryPostList);
-    yield takeEvery(commentActions.COMMENT_SAVE, trySaveComment);
-    yield takeEvery(userActions.LIST_SAVE, saveUser);
+    yield takeLatest(userActions.LIST_TRY, tryUsersList);
+    yield takeLatest(postActions.POST_TRY, tryPostList);
+    yield takeLatest(commentActions.COMMENT_SAVE, trySaveComment);
+    yield takeLatest(userActions.LIST_SAVE, saveUser);
 
 
 }

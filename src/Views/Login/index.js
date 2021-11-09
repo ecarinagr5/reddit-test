@@ -11,7 +11,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => usersSelector(state))
   const [ userid, setUserid ] = useState('');
- 
+  const [ msgError, setmsgError] = useState(0);
+
     useEffect(()=>{
       dispatch(usersActions.list());
     }, [dispatch]);
@@ -19,18 +20,21 @@ const Login = () => {
     const dataSource = users.dataList
 
     const submitValue = () => {
-
-
-      let keys = Object.keys(dataSource).filter(k=>dataSource[k].id === userid);
-      console.log('idData',keys);
+      let currentId =  parseInt(userid)
+      let user = dataSource.find(item => item.id === currentId );
+      if( user ) {
+        dispatch(usersActions.save(user));
+      }
+      else {
+        setmsgError(1)
+      }
     }
 
     const onChangeHandler = event => {
         setUserid(event.target.value);
     };
 
-  const userenabled = users.idEnabled
-
+    console.log('u',users)
     return(
       <div className="wrap--post">
         <input
@@ -41,6 +45,7 @@ const Login = () => {
           />
 
           <button onClick={ submitValue }>Enviar</button>
+          { msgError ? <p> El usuario no existe</p>  : ''}
       </div>
     )
 

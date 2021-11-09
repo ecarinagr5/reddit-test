@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects'
 
-import { actionTypes as postActions } from '../../features/posts'
+import { actionTypes as postActions } from '../features/posts'
 
 export default function* tryPostList() {
     try {

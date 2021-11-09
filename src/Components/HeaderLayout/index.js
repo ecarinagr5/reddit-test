@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import "antd/dist/antd.css";
 import "./header.css";
-import logo from '../../Assets/icons/logo.png'
+import logo from '../../Assets/images/reddit.png'
 
 import { Layout } from 'antd';
 const { Header } = Layout;
