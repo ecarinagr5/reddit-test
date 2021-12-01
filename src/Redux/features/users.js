@@ -18,6 +18,7 @@ const initialState = {
 
 // REDUCER:
 export default function reducer(state = initialState, action = {}) {
+    console.log("dfsdf", action.data)
     switch (action.type) {
         case actionTypes.LIST_TRY:
             return { ...state, isLoading: true }
@@ -39,8 +40,7 @@ function list() {
 }
 
 const save = (user)  => {
-    console.log('in reducer',user)
-    /*return { type: LIST_SAVE }*/
+    return { type: LIST_SAVE }
 }
 
 export const selector = createStructuredSelector({
